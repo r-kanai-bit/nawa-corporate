@@ -52,7 +52,7 @@ export default function Carousel() {
   }
 
   return (
-    <div id="home" className="relative h-screen w-full overflow-hidden mt-20">
+    <div id="home" className="relative h-[40vh] md:h-screen w-full overflow-hidden mt-20">
       {/* Slides - テキストなし */}
       {slides.map((slide, index) => (
         <div
@@ -66,7 +66,7 @@ export default function Carousel() {
               src={slide.image}
               alt={slide.title}
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority={index === 0}
             />
           </div>

@@ -6,18 +6,21 @@ const informationItems = [
     title: '完成見学会',
     description: '実際の施工事例をご覧いただけます。理想の住まいづくりのヒントが見つかります。',
     color: 'bg-primary',
+    calendarUrl: '#', // TODO: カレンダーリンクを設定
   },
   {
     icon: FaCalculator,
     title: '住宅ローン相談会',
     description: '専門スタッフが資金計画をサポート。安心して家づくりを始められます。',
     color: 'bg-accent',
+    calendarUrl: '#', // TODO: カレンダーリンクを設定
   },
   {
     icon: FaFileAlt,
     title: '無料見積会',
     description: 'お気軽にご相談ください。経験豊富なスタッフが丁寧にお見積もりいたします。',
     color: 'bg-secondary',
+    calendarUrl: '#', // TODO: カレンダーリンクを設定
   },
 ]
 
@@ -44,9 +47,14 @@ export default function Information() {
                 <p className="text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
-                <button className="mt-4 text-primary font-medium hover:text-primary/80 transition-colors">
+                <a
+                  href={item.calendarUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-primary font-medium hover:text-primary/80 transition-colors"
+                >
                   詳しく見る →
-                </button>
+                </a>
               </div>
             </div>
           ))}

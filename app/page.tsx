@@ -14,8 +14,7 @@ export default function Home() {
   return (
     <>
       <Carousel />
-      <BackgroundSection />
-      <Philosophy />
+    <BackgroundSection />
       <CompanyInfo />
       <Information />
       <Business />

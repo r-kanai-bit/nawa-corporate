@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/kanairyota/Downloads/files/nawa-corporate-complete/app/layout\":[\"static/media/24f6ebe2756575bd-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/kanairyota/Desktop/nawa-corporate-complete/app/layout\":[\"static/media/24f6ebe2756575bd-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

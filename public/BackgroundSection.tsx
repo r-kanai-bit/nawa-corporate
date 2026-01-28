@@ -1,0 +1,53 @@
+import Image from 'next/image'
+
+export default function BackgroundSection() {
+  return (
+    <section className="relative min-h-screen overflow-hidden">
+      {/* 背景ロゴ - 固定表示 */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative w-[80vw] md:w-[85vw] h-[80vh] opacity-10">
+          <Image
+            src="/logo-new.png"
+            alt="株式会社NAWA"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+
+      {/* いちばん"3代目らしい" セクション */}
+      <div className="relative bg-white/80 min-h-[50vh] flex items-center justify-center">
+        <div className="text-center px-4 py-16">
+          <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#B8860B' }}>
+            いちばん"3代目らしい"
+          </h3>
+          <p className="text-xl md:text-2xl font-medium" style={{ color: '#B8860B' }}>
+            受け継ぎ、磨き、次へ。
+          </p>
+        </div>
+      </div>
+
+      {/* 企業理念セクション */}
+      <div className="relative bg-light/80 min-h-[50vh] flex items-center justify-center">
+        <div className="container-custom py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: '#B8860B' }}>
+              企業理念
+            </h2>
+            <div className="text-4xl md:text-6xl font-bold mb-8 leading-tight" style={{ color: '#B8860B' }}>
+              三代で紡いだ技術を、<br />
+              次の暮らしへ
+            </div>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              創業以来、三代にわたり培ってきた確かな技術と経験。<br />
+              私たちは、その伝統を守りながら、<br />
+              常に新しい時代のニーズに応え続けています。<br />
+              お客様一人ひとりの理想の暮らしを実現するために、<br />
+              真摯に向き合い、心を込めた仕事をお届けします。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

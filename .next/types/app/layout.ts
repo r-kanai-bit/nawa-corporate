@@ -1,4 +1,4 @@
-// File: /Users/kanairyota/Downloads/files/nawa-corporate-complete/app/layout.tsx
+// File: /Users/kanairyota/Desktop/nawa-corporate-complete/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
