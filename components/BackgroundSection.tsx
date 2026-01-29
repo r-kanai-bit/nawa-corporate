@@ -29,7 +29,7 @@ export default function BackgroundSection() {
       </div>
 
       {/* 企業理念セクション */}
-      <div className="relative bg-light/80 min-h-[50vh] flex items-center justify-center">
+      <div id="philosophy" className="relative bg-light/80 min-h-[50vh] flex items-center justify-center">
         <div className="container-custom py-16">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: '#B8860B' }}>
