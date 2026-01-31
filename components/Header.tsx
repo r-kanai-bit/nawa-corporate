@@ -23,17 +23,17 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-2 transition-all duration-300">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="flex items-center cursor-pointer">
+        <Link href="/#home" className="flex items-center cursor-pointer">
           <Image src="/logo-new.png" alt="株式会社NAWA" width={120} height={40} className="h-10 w-auto" />
-        </a>
+        </Link>
 
         <nav className="hidden md:flex space-x-8 flex-1 justify-center relative z-10">
-          <a href="#home" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">ホーム</a>
-          <a href="#philosophy" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">企業理念</a>
+          <Link href="/#home" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">ホーム</Link>
+          <Link href="/#philosophy" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">企業理念</Link>
           <Link href="/guide" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
-          <a href="#business" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">サービス</a>
-          <a href="#works" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">施工実績</a>
-          <a href="#contact" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">お問い合わせ</a>
+          <Link href="/#business" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">サービス</Link>
+          <Link href="/#works" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">施工実績</Link>
+          <Link href="/#contact" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">お問い合わせ</Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -72,12 +72,12 @@ const Header = () => {
 
       <div className={`md:hidden fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <nav className="flex flex-col space-y-6 p-8 mt-16">
-          <a href="#home" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">ホーム</a>
-          <a href="#philosophy" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">企業理念</a>
+          <Link href="/#home" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">ホーム</Link>
+          <Link href="/#philosophy" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">企業理念</Link>
           <Link href="/guide" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
-          <a href="#business" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">サービス</a>
-          <a href="#works" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">施工実績</a>
-          <a href="#contact" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">お問い合わせ</a>
+          <Link href="/#business" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">サービス</Link>
+          <Link href="/#works" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">施工実績</Link>
+          <Link href="/#contact" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">お問い合わせ</Link>
         </nav>
       </div>
 
