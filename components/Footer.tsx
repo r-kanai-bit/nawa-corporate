@@ -55,6 +55,21 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Group Company */}
+        <div className="mt-12 pt-8 border-t border-gray-700">
+          <h4 className="text-lg font-bold mb-4">【グループ企業】</h4>
+          <div className="flex items-start space-x-2 text-sm">
+            <FaMapMarkerAlt className="mt-1 text-accent flex-shrink-0" />
+            <div className="text-gray-300">
+              <p className="font-semibold mb-2">株式会社　名和建築</p>
+              <p>
+                〒500-8283<br />
+                岐阜県岐阜市茜部野瀬3-200
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
           <p>&copy; {new Date().getFullYear()} 株式会社NAWA. All rights reserved.</p>
