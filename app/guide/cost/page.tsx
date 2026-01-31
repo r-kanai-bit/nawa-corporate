@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function CostGuide() {
   return (
-    <main className="font-serif">
+    <main className="pt-16">
       {/* ヘッダー */}
       <section className="bg-gradient-to-b from-gray-100 to-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">

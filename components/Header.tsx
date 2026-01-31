@@ -30,6 +30,7 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8 flex-1 justify-center relative z-10">
           <a href="#home" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">ホーム</a>
           <a href="#philosophy" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">企業理念</a>
+          <Link href="/guide" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
           <a href="#business" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">サービス</a>
           <a href="#works" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">施工実績</a>
           <a href="#contact" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">お問い合わせ</a>
@@ -73,6 +74,7 @@ const Header = () => {
         <nav className="flex flex-col space-y-6 p-8 mt-16">
           <a href="#home" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">ホーム</a>
           <a href="#philosophy" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">企業理念</a>
+          <Link href="/guide" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
           <a href="#business" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">サービス</a>
           <a href="#works" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">施工実績</a>
           <a href="#contact" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">お問い合わせ</a>

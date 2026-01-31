@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function LPTop() {
   return (
-    <main className="font-serif">
+    <main className="pt-16">
       {/* ヒーローセクション */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
