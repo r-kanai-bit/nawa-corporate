@@ -27,14 +27,30 @@ const Header = () => {
           <Image src="/logo-new.png" alt="株式会社NAWA" width={120} height={40} className="h-10 w-auto" />
         </Link>
 
-        <nav className="hidden md:flex space-x-8 flex-1 justify-center relative z-10">
-          <Link href="/#home" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">ホーム</Link>
-          <Link href="/#philosophy" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">企業理念</Link>
-          <Link href="/guide" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
-          <Link href="/plans" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">プラン</Link>
-          <Link href="/#business" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">サービス</Link>
-          <Link href="/#works" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">施工実績</Link>
-          <Link href="/#contact" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">お問い合わせ</Link>
+        <nav className="hidden md:flex space-x-6 lg:space-x-8 flex-1 justify-center relative z-10">
+          {[
+            { href: '/#home', label: 'ホーム', en: 'HOME' },
+            { href: '/#philosophy', label: '企業理念', en: 'PHILOSOPHY' },
+            { href: '/guide', label: 'ガイド', en: 'GUIDE' },
+            { href: '/plans', label: 'プラン', en: 'PLANS' },
+            { href: '/#business', label: 'サービス', en: 'SERVICE' },
+            { href: '/#works', label: '施工実績', en: 'WORKS' },
+            { href: '/#contact', label: 'お問い合わせ', en: 'CONTACT' },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group relative py-2 cursor-pointer"
+            >
+              <span className="text-[10px] tracking-[0.15em] text-gray-400 group-hover:text-[#B8860B] transition-colors duration-300 block leading-none">
+                {item.en}
+              </span>
+              <span className="text-sm text-gray-700 group-hover:text-[#B8860B] transition-colors duration-300 font-medium">
+                {item.label}
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#B8860B] group-hover:w-full transition-all duration-300"></span>
+            </Link>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -71,15 +87,31 @@ const Header = () => {
         </button>
       </div>
 
-      <div className={`md:hidden fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <nav className="flex flex-col space-y-6 p-8 mt-16">
-          <Link href="/#home" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">ホーム</Link>
-          <Link href="/#philosophy" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">企業理念</Link>
-          <Link href="/guide" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
-          <Link href="/plans" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">プラン</Link>
-          <Link href="/#business" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">サービス</Link>
-          <Link href="/#works" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">施工実績</Link>
-          <Link href="/#contact" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">お問い合わせ</Link>
+      <div className={`md:hidden fixed top-0 right-0 w-72 h-full bg-white shadow-lg transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <nav className="flex flex-col p-8 mt-16">
+          {[
+            { href: '/#home', label: 'ホーム', en: 'HOME' },
+            { href: '/#philosophy', label: '企業理念', en: 'PHILOSOPHY' },
+            { href: '/guide', label: 'ガイド', en: 'GUIDE' },
+            { href: '/plans', label: 'プラン', en: 'PLANS' },
+            { href: '/#business', label: 'サービス', en: 'SERVICE' },
+            { href: '/#works', label: '施工実績', en: 'WORKS' },
+            { href: '/#contact', label: 'お問い合わせ', en: 'CONTACT' },
+          ].map((item, index) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={toggleMobileMenu}
+              className="group py-4 border-b border-gray-100 last:border-b-0"
+            >
+              <span className="text-[10px] tracking-[0.2em] text-gray-400 group-hover:text-[#B8860B] transition-colors duration-300 block mb-1">
+                {item.en}
+              </span>
+              <span className="text-gray-700 group-hover:text-[#B8860B] transition-colors duration-300 font-medium">
+                {item.label}
+              </span>
+            </Link>
+          ))}
         </nav>
       </div>
 
