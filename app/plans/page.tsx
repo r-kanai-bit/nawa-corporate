@@ -7,14 +7,22 @@ import Link from 'next/link'
 // 画像ギャラリー定義
 const planGalleries: { [key: string]: string[] } = {
   origin: [
-    '/images/IMG_0697.jpg',
-    '/images/IMG_0696.jpg',
-    '/images/IMG_0689.jpg',
+    '/images/plans/origin/origin-exterior.jpg',
+    '/images/plans/origin/origin-01.jpg',
+    '/images/plans/origin/origin-02.jpg',
+    '/images/plans/origin/origin-03.jpg',
+    '/images/plans/origin/origin-04.jpg',
+    '/images/plans/origin/origin-05.jpg',
+    '/images/plans/origin/origin-06.jpg',
+    '/images/plans/origin/origin-07.jpg',
   ],
   standard: [
-    '/images/IMG_0693.jpg',
-    '/images/IMG_0692.jpg',
-    '/images/IMG_0694.jpg',
+    '/images/plans/standard/3V6A7861-Edit.jpg',
+    '/images/plans/standard/2R2A8194.jpg',
+    '/images/plans/standard/3V6A8791.jpg',
+    '/images/plans/standard/3V6A8830.jpg',
+    '/images/plans/standard/3V6A8925.jpg',
+    '/images/plans/standard/3V6A9345.jpg',
   ],
   concept: [
     '/images/plans/concept/1234_MG_2720.jpg',
@@ -51,7 +59,7 @@ const plans = [
     ],
     color: '#1a365d',
     accentColor: '#B8860B',
-    image: '/images/IMG_0697.jpg'
+    image: '/images/plans/origin/origin-exterior.jpg'
   },
   {
     id: 'standard',
@@ -73,7 +81,7 @@ const plans = [
     ],
     color: '#2d3748',
     accentColor: '#B8860B',
-    image: '/images/IMG_0693.jpg'
+    image: '/images/plans/standard/3V6A7861-Edit.jpg'
   },
   {
     id: 'concept',
