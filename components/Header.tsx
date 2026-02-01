@@ -87,7 +87,7 @@ const Header = () => {
         </button>
       </div>
 
-      <div className={`md:hidden fixed top-0 right-0 w-72 h-full bg-white shadow-lg transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`md:hidden fixed top-0 right-0 w-72 h-full bg-white shadow-lg transform transition-transform duration-300 z-50 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <nav className="flex flex-col p-8 mt-16">
           {[
             { href: '/#home', label: 'ホーム', en: 'HOME' },
