@@ -11,6 +11,9 @@ export default function Consultation() {
     date: '',
     time: '',
     message: '',
+    readHouseFlow: false,
+    readPriceGuide: false,
+    stage: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -116,6 +119,45 @@ export default function Consultation() {
         </div>
       </section>
 
+      {/* PDF資料案内 */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-[#B8860B]/5 border border-[#B8860B]/20 rounded-lg p-6">
+            <div className="flex items-start gap-4">
+              <div className="text-2xl">💡</div>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-2">ご相談前にご覧いただくと、より具体的なお話ができます</h3>
+                <div className="flex flex-wrap gap-3 mt-4">
+                  <a
+                    href="/downloads/house-flow.pdf"
+                    download
+                    className="inline-flex items-center text-sm text-[#B8860B] hover:underline"
+                  >
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    家づくりの流れ（PDF）
+                  </a>
+                  <a
+                    href="/downloads/price-guide.pdf"
+                    download
+                    className="inline-flex items-center text-sm text-[#B8860B] hover:underline"
+                  >
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    価格帯ガイド（PDF）
+                  </a>
+                </div>
+                <p className="text-xs text-gray-500 mt-3">
+                  ※事前に目を通していただけると、当日は「あなたの家」の話に集中できます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 予約フォーム */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-2xl mx-auto">
@@ -178,6 +220,47 @@ export default function Consultation() {
                   </select>
                 </div>
               </div>
+              {/* PDF既読チェック */}
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <label className="block text-sm font-medium mb-3">事前資料の確認状況</label>
+                <div className="space-y-2">
+                  <label className="flex items-center cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={formData.readHouseFlow}
+                      onChange={(e) => setFormData({ ...formData, readHouseFlow: e.target.checked })}
+                      className="w-4 h-4 text-[#B8860B] rounded border-gray-300 focus:ring-[#B8860B]"
+                    />
+                    <span className="ml-2 text-sm">「家づくりの流れ」PDFを読んだ</span>
+                  </label>
+                  <label className="flex items-center cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={formData.readPriceGuide}
+                      onChange={(e) => setFormData({ ...formData, readPriceGuide: e.target.checked })}
+                      className="w-4 h-4 text-[#B8860B] rounded border-gray-300 focus:ring-[#B8860B]"
+                    />
+                    <span className="ml-2 text-sm">「価格帯ガイド」PDFを読んだ</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* 検討段階 */}
+              <div>
+                <label className="block text-sm font-medium mb-2">現在の検討段階</label>
+                <select
+                  className="w-full p-3 border rounded focus:ring-2 focus:ring-[#B8860B] focus:border-transparent"
+                  value={formData.stage}
+                  onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
+                >
+                  <option value="">選択してください</option>
+                  <option value="info">情報収集中（まだ先の話）</option>
+                  <option value="land">土地探し中</option>
+                  <option value="compare">他社と比較検討中</option>
+                  <option value="decided">NAWAに決めたい</option>
+                </select>
+              </div>
+
               <div>
                 <label className="block text-sm font-medium mb-2">ご相談内容・ご質問</label>
                 <textarea

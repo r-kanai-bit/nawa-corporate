@@ -109,6 +109,34 @@ export default function HouseFlow() {
         </div>
       </section>
 
+      {/* PDFダウンロードセクション */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="border-2 border-dashed border-[#B8860B]/30 rounded-lg p-8 text-center">
+            <div className="w-16 h-16 bg-[#B8860B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-[#B8860B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">この内容をPDFでダウンロード</h3>
+            <p className="text-gray-600 mb-6 text-sm">
+              ご家族での相談や、他社との比較検討に<br />
+              ご自由にお使いください。
+            </p>
+            <a
+              href="/downloads/house-flow.pdf"
+              download
+              className="inline-flex items-center px-8 py-4 bg-[#B8860B] text-white font-semibold rounded-lg hover:bg-[#996f0a] transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              PDFをダウンロードする（無料）
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-4 bg-[#B8860B]">
         <div className="max-w-3xl mx-auto text-center text-white">
