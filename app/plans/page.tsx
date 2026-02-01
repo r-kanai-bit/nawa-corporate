@@ -4,6 +4,31 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+// 画像ギャラリー定義
+const planGalleries: { [key: string]: string[] } = {
+  origin: [
+    '/images/IMG_0697.jpg',
+    '/images/IMG_0696.jpg',
+    '/images/IMG_0689.jpg',
+  ],
+  standard: [
+    '/images/IMG_0693.jpg',
+    '/images/IMG_0692.jpg',
+    '/images/IMG_0694.jpg',
+  ],
+  concept: [
+    '/images/plans/concept/1234_MG_2720.jpg',
+    '/images/plans/concept/1420_MG_2934.jpg',
+    '/images/plans/concept/1431_MG_2963.jpg',
+    '/images/plans/concept/1437_MG_2996.jpg',
+    '/images/plans/concept/1443_MG_3004.jpg',
+    '/images/plans/concept/1542_MG_3088.jpg',
+    '/images/plans/concept/1545_MG_3094.jpg',
+    '/images/plans/concept/1629_MG_3147.jpg',
+    '/images/plans/concept/1232_MG_2715.jpg',
+  ],
+}
+
 // プラン定義
 const plans = [
   {
@@ -24,7 +49,7 @@ const plans = [
       '設計プロセスを楽しみたい方',
       '長期的な価値を重視される方'
     ],
-    color: '#1a365d', // Deep navy
+    color: '#1a365d',
     accentColor: '#B8860B',
     image: '/images/IMG_0697.jpg'
   },
@@ -46,7 +71,7 @@ const plans = [
       '予算と品質のバランスを重視する方',
       'ベースがあった方が想像しやすい方'
     ],
-    color: '#2d3748', // Charcoal
+    color: '#2d3748',
     accentColor: '#B8860B',
     image: '/images/IMG_0693.jpg'
   },
@@ -68,14 +93,111 @@ const plans = [
       'デザインはプロに任せたい方',
       '早く新居に住みたい方'
     ],
-    color: '#374151', // Slate
+    color: '#374151',
     accentColor: '#B8860B',
     image: '/images/plans/concept/1234_MG_2720.jpg'
   }
 ]
 
+// 画像モーダルコンポーネント
+function ImageGalleryModal({
+  isOpen,
+  onClose,
+  images,
+  planName
+}: {
+  isOpen: boolean
+  onClose: () => void
+  images: string[]
+  planName: string
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  if (!isOpen) return null
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={onClose}>
+      <div className="relative w-full max-w-5xl mx-4" onClick={(e) => e.stopPropagation()}>
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Plan name */}
+        <p className="absolute -top-12 left-0 text-white text-lg font-light tracking-wider">{planName}</p>
+
+        {/* Main image */}
+        <div className="relative aspect-[16/10] bg-gray-900 rounded-lg overflow-hidden">
+          <Image
+            src={images[currentIndex]}
+            alt={`${planName} イメージ ${currentIndex + 1}`}
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        {/* Navigation arrows */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/20 hover:bg-white/40 rounded-full transition-colors"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/20 hover:bg-white/40 rounded-full transition-colors"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
+
+        {/* Thumbnail navigation */}
+        <div className="flex gap-2 mt-4 justify-center overflow-x-auto pb-2">
+          {images.map((img, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
+                idx === currentIndex ? 'border-white' : 'border-transparent opacity-60 hover:opacity-100'
+              }`}
+            >
+              <Image src={img} alt="" fill className="object-cover" />
+            </button>
+          ))}
+        </div>
+
+        {/* Counter */}
+        <p className="text-center text-white/70 mt-2 text-sm">
+          {currentIndex + 1} / {images.length}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export default function PlansPage() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null)
+  const [galleryOpen, setGalleryOpen] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen bg-white">
@@ -179,6 +301,20 @@ export default function PlansPage() {
                       ))}
                     </ul>
                   </div>
+
+                  {/* View Images Button */}
+                  <button
+                    onClick={() => setGalleryOpen(plan.id)}
+                    className="block w-full py-3 mb-3 text-center border-2 rounded-lg transition-all duration-300 hover:bg-gray-50"
+                    style={{ borderColor: plan.accentColor, color: plan.accentColor }}
+                  >
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      イメージを観てみる
+                    </span>
+                  </button>
 
                   {/* CTA */}
                   <Link
@@ -321,6 +457,17 @@ export default function PlansPage() {
           </div>
         </div>
       </section>
+
+      {/* Image Gallery Modals */}
+      {plans.map((plan) => (
+        <ImageGalleryModal
+          key={plan.id}
+          isOpen={galleryOpen === plan.id}
+          onClose={() => setGalleryOpen(null)}
+          images={planGalleries[plan.id]}
+          planName={plan.name}
+        />
+      ))}
     </div>
   )
 }
