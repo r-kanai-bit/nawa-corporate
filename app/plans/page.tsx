@@ -247,12 +247,12 @@ export default function PlansPage() {
             {plans.map((plan) => (
               <div
                 key={plan.id}
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col"
                 onMouseEnter={() => setSelectedPlan(plan.id)}
                 onMouseLeave={() => setSelectedPlan(null)}
               >
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-64 overflow-hidden flex-shrink-0">
                   <Image
                     src={plan.image}
                     alt={plan.name}
@@ -270,68 +270,74 @@ export default function PlansPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <p
-                    className="text-lg font-medium mb-4 text-center"
-                    style={{ color: plan.accentColor }}
-                  >
-                    「{plan.tagline}」
-                  </p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                    {plan.description}
-                  </p>
+                <div className="p-6 flex flex-col flex-grow">
+                  {/* Upper content area - grows to fill space */}
+                  <div className="flex-grow">
+                    <p
+                      className="text-lg font-medium mb-4 text-center"
+                      style={{ color: plan.accentColor }}
+                    >
+                      「{plan.tagline}」
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                      {plan.description}
+                    </p>
 
-                  {/* Features */}
-                  <div className="mb-6">
-                    <p className="text-xs text-gray-500 tracking-wider mb-3">FEATURES</p>
-                    <ul className="space-y-2">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-700">
-                          <span
-                            className="w-1.5 h-1.5 rounded-full mr-3"
-                            style={{ backgroundColor: plan.accentColor }}
-                          ></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Features */}
+                    <div className="mb-6">
+                      <p className="text-xs text-gray-500 tracking-wider mb-3">FEATURES</p>
+                      <ul className="space-y-2">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center text-sm text-gray-700">
+                            <span
+                              className="w-1.5 h-1.5 rounded-full mr-3"
+                              style={{ backgroundColor: plan.accentColor }}
+                            ></span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* For Whom */}
+                    <div className="mb-6">
+                      <p className="text-xs text-gray-500 tracking-wider mb-3">こんな方に</p>
+                      <ul className="space-y-2">
+                        {plan.forWhom.map((item, idx) => (
+                          <li key={idx} className="flex items-start text-sm text-gray-600">
+                            <span className="text-gray-400 mr-2">•</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  {/* For Whom */}
-                  <div className="mb-6">
-                    <p className="text-xs text-gray-500 tracking-wider mb-3">こんな方に</p>
-                    <ul className="space-y-2">
-                      {plan.forWhom.map((item, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-gray-600">
-                          <span className="text-gray-400 mr-2">•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Buttons area - always at bottom */}
+                  <div className="mt-auto">
+                    {/* View Images Button */}
+                    <button
+                      onClick={() => setGalleryOpen(plan.id)}
+                      className="block w-full py-3 mb-3 text-center border-2 rounded-lg transition-all duration-300 hover:bg-gray-50"
+                      style={{ borderColor: plan.accentColor, color: plan.accentColor }}
+                    >
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        イメージを観てみる
+                      </span>
+                    </button>
+
+                    {/* CTA */}
+                    <Link
+                      href="/consultation"
+                      className="block w-full py-3 text-center text-white rounded-lg transition-all duration-300 hover:opacity-90"
+                      style={{ backgroundColor: plan.accentColor }}
+                    >
+                      このプランで相談する
+                    </Link>
                   </div>
-
-                  {/* View Images Button */}
-                  <button
-                    onClick={() => setGalleryOpen(plan.id)}
-                    className="block w-full py-3 mb-3 text-center border-2 rounded-lg transition-all duration-300 hover:bg-gray-50"
-                    style={{ borderColor: plan.accentColor, color: plan.accentColor }}
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      イメージを観てみる
-                    </span>
-                  </button>
-
-                  {/* CTA */}
-                  <Link
-                    href="/consultation"
-                    className="block w-full py-3 text-center text-white rounded-lg transition-all duration-300 hover:opacity-90"
-                    style={{ backgroundColor: plan.accentColor }}
-                  >
-                    このプランで相談する
-                  </Link>
                 </div>
               </div>
             ))}
