@@ -144,7 +144,7 @@ export default function ReformGuide() {
         </div>
       </section>
 
-      {/* PDFダウンロードセクション（準備中） */}
+      {/* PDFダウンロードセクション */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="border-2 border-dashed border-[#B8860B]/30 rounded-lg p-8 text-center bg-white">
@@ -153,9 +153,9 @@ export default function ReformGuide() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">リフォームガイドPDF</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">リフォーム価格帯ガイドPDF</h3>
             <p className="text-gray-600 mb-6 text-sm">
-              リフォームの種類・費用・流れをまとめた資料です。<br />
+              リフォームの種類・費用目安をまとめた資料です。<br />
               ご検討の参考にお使いください。
             </p>
             <a
@@ -168,9 +168,6 @@ export default function ReformGuide() {
               </svg>
               PDFをダウンロードする（無料）
             </a>
-            <p className="text-xs text-gray-500 mt-4">
-              ※現在準備中です。近日公開予定。
-            </p>
           </div>
         </div>
       </section>
