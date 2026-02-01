@@ -17,12 +17,12 @@ const planGalleries: { [key: string]: string[] } = {
     '/images/plans/origin/origin-07.jpg',
   ],
   standard: [
-    '/images/plans/standard/3V6A7861-Edit.jpg',
-    '/images/plans/standard/2R2A8194.jpg',
-    '/images/plans/standard/3V6A8791.jpg',
     '/images/plans/standard/3V6A8830.jpg',
-    '/images/plans/standard/3V6A8925.jpg',
+    '/images/plans/standard/3V6A7861-Edit.jpg',
     '/images/plans/standard/3V6A9345.jpg',
+    '/images/plans/standard/3V6A8791.jpg',
+    '/images/plans/standard/3V6A8925.jpg',
+    '/images/plans/standard/2R2A8194.jpg',
   ],
   concept: [
     '/images/plans/concept/1234_MG_2720.jpg',
@@ -81,7 +81,7 @@ const plans = [
     ],
     color: '#2d3748',
     accentColor: '#B8860B',
-    image: '/images/plans/standard/3V6A7861-Edit.jpg'
+    image: '/images/plans/standard/3V6A8830.jpg'
   },
   {
     id: 'concept',
