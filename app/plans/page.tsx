@@ -17,8 +17,8 @@ const planGalleries: { [key: string]: string[] } = {
     '/images/plans/origin/origin-07.jpg',
   ],
   standard: [
-    '/images/plans/standard/3V6A8830.jpg',
     '/images/plans/standard/3V6A7861-Edit.jpg',
+    '/images/plans/standard/3V6A8830.jpg',
     '/images/plans/standard/3V6A9345.jpg',
     '/images/plans/standard/3V6A8791.jpg',
     '/images/plans/standard/3V6A8925.jpg',
@@ -81,7 +81,7 @@ const plans = [
     ],
     color: '#2d3748',
     accentColor: '#B8860B',
-    image: '/images/plans/standard/3V6A8830.jpg'
+    image: '/images/plans/standard/3V6A7861-Edit.jpg'
   },
   {
     id: 'concept',
