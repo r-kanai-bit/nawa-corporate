@@ -70,7 +70,7 @@ const plans = [
     ],
     color: '#374151', // Slate
     accentColor: '#B8860B',
-    image: '/images/IMG_0694.jpg'
+    image: '/images/plans/concept/1234_MG_2720.jpg'
   }
 ]
 
