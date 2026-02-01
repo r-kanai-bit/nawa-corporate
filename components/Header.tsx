@@ -31,6 +31,7 @@ const Header = () => {
           <Link href="/#home" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">ホーム</Link>
           <Link href="/#philosophy" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">企業理念</Link>
           <Link href="/guide" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
+          <Link href="/plans" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">プラン</Link>
           <Link href="/#business" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">サービス</Link>
           <Link href="/#works" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">施工実績</Link>
           <Link href="/#contact" className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300 cursor-pointer">お問い合わせ</Link>
@@ -75,6 +76,7 @@ const Header = () => {
           <Link href="/#home" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">ホーム</Link>
           <Link href="/#philosophy" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">企業理念</Link>
           <Link href="/guide" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">家づくりガイド</Link>
+          <Link href="/plans" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">プラン</Link>
           <Link href="/#business" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">サービス</Link>
           <Link href="/#works" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">施工実績</Link>
           <Link href="/#contact" onClick={toggleMobileMenu} className="text-gray-800 hover:text-[#B8860B] transition-colors duration-300">お問い合わせ</Link>
