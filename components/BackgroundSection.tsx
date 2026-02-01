@@ -46,6 +46,20 @@ export default function BackgroundSection() {
               お客様一人ひとりの理想の暮らしを実現するために、<br />
               真摯に向き合い、心を込めた仕事をお届けします。
             </p>
+
+            {/* 家づくりガイドへのリンク */}
+            <div className="mt-12">
+              <a
+                href="/guide"
+                className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                style={{ backgroundColor: '#B8860B' }}
+              >
+                <span>家づくりガイドを見る</span>
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
