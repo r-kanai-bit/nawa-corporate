@@ -35,6 +35,7 @@ const Header = () => {
             { href: '/plans', label: 'プラン', en: 'PLANS' },
             { href: '/#business', label: 'サービス', en: 'SERVICE' },
             { href: '/#works', label: '施工実績', en: 'WORKS' },
+            { href: '/area', label: '施工エリア', en: 'AREA' },
             { href: '/#contact', label: 'お問い合わせ', en: 'CONTACT' },
           ].map((item) => (
             <Link
@@ -96,6 +97,7 @@ const Header = () => {
             { href: '/plans', label: 'プラン', en: 'PLANS' },
             { href: '/#business', label: 'サービス', en: 'SERVICE' },
             { href: '/#works', label: '施工実績', en: 'WORKS' },
+            { href: '/area', label: '施工エリア', en: 'AREA' },
             { href: '/#contact', label: 'お問い合わせ', en: 'CONTACT' },
           ].map((item, index) => (
             <Link
