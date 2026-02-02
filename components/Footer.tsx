@@ -31,25 +31,25 @@ export default function Footer() {
 
           {/* Head Office */}
           <div>
-            <h4 className="text-lg font-bold mb-4">本社</h4>
-            <div className="flex items-start space-x-2 text-sm">
-              <FaMapMarkerAlt className="mt-1 text-accent flex-shrink-0" />
-              <p className="text-gray-300">
-                〒500-8357<br />
-                岐阜県岐阜市六条大溝1丁目5−6
-              </p>
-            </div>
-          </div>
-
-          {/* Branch */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">支店</h4>
+            <h4 className="text-lg font-bold mb-4">本社（名古屋）</h4>
             <div className="flex items-start space-x-2 text-sm">
               <FaMapMarkerAlt className="mt-1 text-accent flex-shrink-0" />
               <p className="text-gray-300">
                 〒460-0008<br />
                 愛知県名古屋市中区栄1丁目22番2号<br />
                 ライオンズ名古屋ビル
+              </p>
+            </div>
+          </div>
+
+          {/* Branch */}
+          <div>
+            <h4 className="text-lg font-bold mb-4">支店（岐阜）</h4>
+            <div className="flex items-start space-x-2 text-sm">
+              <FaMapMarkerAlt className="mt-1 text-accent flex-shrink-0" />
+              <p className="text-gray-300">
+                〒500-8357<br />
+                岐阜県岐阜市六条大溝1丁目5−6
               </p>
             </div>
           </div>

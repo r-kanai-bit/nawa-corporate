@@ -42,26 +42,26 @@ export default function CompanyInfo() {
                 <h3 className="text-sm font-semibold text-gray-500 mb-2">
                   <div className="flex items-center space-x-2">
                     <FaBuilding className="text-primary" />
-                    <span>本社</span>
-                  </div>
-                </h3>
-                <p className="text-base text-dark leading-relaxed">
-                  〒500-8357<br />
-                  岐阜県岐阜市六条大溝1丁目5−6
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-sm font-semibold text-gray-500 mb-2">
-                  <div className="flex items-center space-x-2">
-                    <FaMapMarkerAlt className="text-primary" />
-                    <span>支店</span>
+                    <span>本社（名古屋）</span>
                   </div>
                 </h3>
                 <p className="text-base text-dark leading-relaxed">
                   〒460-0008<br />
                   愛知県名古屋市中区栄1丁目22番2号<br />
                   ライオンズ名古屋ビル
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-500 mb-2">
+                  <div className="flex items-center space-x-2">
+                    <FaMapMarkerAlt className="text-primary" />
+                    <span>支店（岐阜）</span>
+                  </div>
+                </h3>
+                <p className="text-base text-dark leading-relaxed">
+                  〒500-8357<br />
+                  岐阜県岐阜市六条大溝1丁目5−6
                 </p>
               </div>
             </div>
