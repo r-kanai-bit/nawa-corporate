@@ -125,16 +125,15 @@ export default function HouseFlow() {
               ご家族での相談や、他社との比較検討に<br />
               ご自由にお使いください。
             </p>
-            <a
-              href="/downloads/house-flow.pdf"
-              download
+            <Link
+              href="/download/house-flow"
               className="inline-flex items-center px-8 py-4 bg-[#B8860B] text-white font-semibold rounded-lg hover:bg-[#996f0a] transition-all duration-300 shadow-md hover:shadow-lg"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               PDFをダウンロードする（無料）
-            </a>
+            </Link>
           </div>
         </div>
       </section>
