@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import BackButton from '@/components/BackButton';
 
 export default function Consultation() {
   const [formData, setFormData] = useState({
@@ -24,6 +25,7 @@ export default function Consultation() {
 
   return (
     <main className="pt-16">
+      <BackButton />
       {/* ヘッダー */}
       <section className="bg-gradient-to-b from-gray-100 to-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">

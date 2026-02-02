@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import BackButton from '@/components/BackButton';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -83,6 +84,7 @@ export default function FAQ() {
 
   return (
     <main className="pt-16">
+      <BackButton />
       {/* ヘッダー */}
       <section className="bg-gradient-to-b from-gray-100 to-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">

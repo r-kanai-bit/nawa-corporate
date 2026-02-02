@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import BackButton from '@/components/BackButton';
 
 export default function GuideIndex() {
   const guides = [
@@ -32,6 +33,7 @@ export default function GuideIndex() {
 
   return (
     <main className="pt-16">
+      <BackButton />
       {/* ヘッダー */}
       <section className="bg-gradient-to-b from-gray-100 to-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">

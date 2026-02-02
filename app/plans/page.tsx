@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import BackButton from '@/components/BackButton'
 
 // 画像ギャラリー定義
 const planGalleries: { [key: string]: string[] } = {
@@ -209,6 +210,7 @@ export default function PlansPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <BackButton />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
