@@ -2,6 +2,36 @@ import Image from 'next/image'
 
 const works = [
   {
+    id: 101,
+    title: 'ブラックモダン住宅',
+    category: '新築',
+    location: '岐阜県',
+    projectName: '新築工事A様邸',
+    image: '/images/black-modern-01.jpg',
+    description: '黒いガルバリウム外壁と木目アクセントが調和したスタイリッシュなデザイン',
+    isNew: true
+  },
+  {
+    id: 102,
+    title: 'ウッドデッキテラス',
+    category: 'エクステリア',
+    location: '岐阜県',
+    projectName: '新築工事A様邸（外構）',
+    image: '/images/wood-deck-01.jpg',
+    description: 'くつろぎのアウトドアリビング空間。天然木の温もりを感じるデッキ',
+    isNew: true
+  },
+  {
+    id: 103,
+    title: 'ツートンモダン住宅',
+    category: '新築',
+    location: '岐阜県',
+    projectName: '新築工事B様邸',
+    image: '/images/twotone-modern-01.jpg',
+    description: '白と木目パネルが調和したデザイン住宅。明るく開放的な空間設計',
+    isNew: true
+  },
+  {
     id: 1,
     title: 'ナチュラルモダン住宅',
     category: '新築',
@@ -81,11 +111,18 @@ export default function Works() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 flex gap-2">
                   <span className="bg-primary text-white px-3 py-1 rounded-full text-sm">
                     {work.category}
                   </span>
                 </div>
+                {work.isNew && (
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+                      NEW
+                    </span>
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">
