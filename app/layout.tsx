@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import FloatingMascot from '@/components/FloatingMascot'
 
 const notoSansJP = Noto_Sans_JP({ 
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingMascot />
       </body>
     </html>
   )
