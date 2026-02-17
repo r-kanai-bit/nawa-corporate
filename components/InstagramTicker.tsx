@@ -20,7 +20,7 @@ export default function InstagramTicker() {
               <circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-grad)" />
             </svg>
             <h2 className="heading-secondary" style={{ letterSpacing: '0.1em' }}>
-              インスタグラムをチェック
+              Instagramを✅
             </h2>
           </div>
           <p className="text-gray-500 text-sm">
