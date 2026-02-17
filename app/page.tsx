@@ -9,12 +9,14 @@ import Works from '@/components/Works'
 import Voice from '@/components/Voice'
 import DocumentRequest from '@/components/DocumentRequest'
 import ContactForm from '@/components/ContactForm'
+import InstagramTicker from '@/components/InstagramTicker'
 
 export default function Home() {
   return (
     <>
       <Carousel />
-    <BackgroundSection />
+      <InstagramTicker />
+      <BackgroundSection />
       <CompanyInfo />
       <Information />
       <Business />
