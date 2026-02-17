@@ -11,7 +11,7 @@ const FloatingMascot = () => {
       <Image
         src="/mascot.png"
         alt="NAWAマスコットキャラクター"
-        width={80
+        width={80}
         height={172}
         className="drop-shadow-lg"
         priority={false}
